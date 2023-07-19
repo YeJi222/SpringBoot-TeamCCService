@@ -1,0 +1,39 @@
+.gridContainer{
+    display: grid;
+    grid-template-columns: 1.6fr 1.4fr 0.5fr;
+}
+
+.tableTitle{
+    font-family: "Poppins";
+    font-size: 15px;
+}
+
+.tableSubTitle{
+    color: grey;
+    font-size: 12px;
+}
+
+.secondCol{
+    margin-top: 10px;
+    background-color: #6FB6FF;
+    color: white;
+    border-radius: 8px;
+    font-family: "Poppins";
+    font-size: 10px;
+    padding: 5px;
+    height: 17px;
+    width: 125px;
+}
+
+.thirdCol{
+    margin-top: 10px;
+    margin-right: 5px;
+    background-color: #F64E60;
+    color: white;
+    border-radius: 8px;
+    font-family: "Poppins";
+    font-size: 10px;
+    padding: 5px;
+    height: 17px;
+    width: 78px;
+}
