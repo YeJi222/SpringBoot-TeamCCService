@@ -1,5 +1,7 @@
-package com.service.teamcc.entity;
+package com.service.teamcc.data.entity;
 
+import com.service.teamcc.data.entity.compositeKey.ColorPK;
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -19,8 +21,7 @@ import lombok.ToString;
 @ToString
 @Table(name = "Color")
 public class ColorEntity {
-    @Id
-    String adminId;
-    String score;
+    @EmbeddedId
+    ColorPK compositeKey;
     String color;
 }

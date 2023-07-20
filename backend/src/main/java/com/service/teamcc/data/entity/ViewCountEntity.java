@@ -1,4 +1,4 @@
-package com.service.teamcc.entity;
+package com.service.teamcc.data.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -17,14 +17,12 @@ import lombok.ToString;
 @AllArgsConstructor
 @Builder
 @ToString
-@Table(name = "Cc")
-public class CcEntity {
+@Table(name = "ViewCount")
+public class ViewCountEntity {
     @Id
-    String adminId;
-    String teamNum;
-    String activityId;
-    String image;
-    String size;
-    String mimetype;
-    String activityIdx;
+    String id;
+    String count;
+    String year;
+    String month;
+    String day;
 }

@@ -1,7 +1,8 @@
-package com.service.teamcc.entity;
+package com.service.teamcc.data.entity;
 
+import com.service.teamcc.data.entity.compositeKey.CcPK;
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,12 +18,11 @@ import lombok.ToString;
 @AllArgsConstructor
 @Builder
 @ToString
-@Table(name = "Activity")
-public class ActivityEntity {
-    @Id
-    String id;
-    String adminId;
-    String activity;
-    String score;
-    String activityNum;
+@Table(name = "Cc")
+public class CcEntity {
+    @EmbeddedId
+    CcPK compositeKey;
+    String image;
+    String size;
+    String mimetype;
 }

@@ -1,5 +1,7 @@
-package com.service.teamcc.entity;
+package com.service.teamcc.data.entity;
 
+import com.service.teamcc.data.entity.compositeKey.UrlPK;
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -17,9 +19,9 @@ import lombok.ToString;
 @AllArgsConstructor
 @Builder
 @ToString
-@Table(name = "Developer")
-public class DeveloperEntity {
-    @Id
-    String id;
-    String password;
+@Table(name = "Url")
+public class UrlEntity {
+    @EmbeddedId
+    UrlPK compositeKey;
+    String url;
 }

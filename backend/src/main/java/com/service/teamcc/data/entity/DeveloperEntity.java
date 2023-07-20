@@ -1,4 +1,4 @@
-package com.service.teamcc.entity;
+package com.service.teamcc.data.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -17,13 +17,9 @@ import lombok.ToString;
 @AllArgsConstructor
 @Builder
 @ToString
-@Table(name = "TeamInfo")
-public class TeamInfoEntity {
+@Table(name = "Developer")
+public class DeveloperEntity {
     @Id
-    String adminId;
-    String title;
-    String num;
-    String backgroundImage;
-    String backgroundMimetype;
-    String state;
+    String id;
+    String password;
 }
