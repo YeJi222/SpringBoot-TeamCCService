@@ -1,6 +1,10 @@
+.tableWrapper{
+    margin: 8px;
+}
+
 .gridContainer{
     display: grid;
-    grid-template-columns: 1.6fr 1.4fr 0.5fr;
+    grid-template-columns: 1.6fr 1.5fr 0.5fr;
 }
 
 .tableTitle{
@@ -22,12 +26,11 @@
     font-size: 10px;
     padding: 5px;
     height: 17px;
-    width: 125px;
+    width: 123px;
 }
 
 .thirdCol{
     margin-top: 10px;
-    margin-right: 5px;
     background-color: #F64E60;
     color: white;
     border-radius: 8px;
@@ -36,4 +39,33 @@
     padding: 5px;
     height: 17px;
     width: 78px;
+}
+
+.tableCSS{
+    margin-top: 10px;
+    background-color: #F3F6F9;
+    
+    border-collapse: collapse;
+}
+
+.tableFirstCol{   
+    font-size: 11px;
+}
+
+.tableSecondCol{
+    color: #82829F;
+    font-size: 11px;
+    width: 200px;
+    text-align: left;
+}
+
+.tableTH{
+    font-size: 11px;
+    color: #82829F;
+    padding: 5px;
+    text-align: center;
+}
+
+.deleteBtn{
+    width: 20px;
 }

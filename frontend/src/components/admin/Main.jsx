@@ -7,7 +7,7 @@ function Main(){
     const navigate = useNavigate();
 
     return(
-        <div>   
+        <div className='tableWrapper'>   
             <TableTitle
             tableTitle="TeamCC Activity"
                 
