@@ -8,16 +8,21 @@ function Start(){
         navigate('./login');
     }
 
+    const registerPage = e => {
+        navigate('./register');
+    }
+
     return(
         <div className='page'>
             <div className='title'>
-                <span style={{color:"#717171"}}>TEAM</span><span className='spanTitle'>CC</span> <br></br>
+                <span style={{color:"#717171"}}>TEAM</span>
+                <span className='spanTitle'>CC</span> <br></br>
                 <span className='spanTitle'>SERVICE</span>
             </div>
             <div className='loginBtn' onClick={loginPage}>
                 LOGIN
             </div>
-            <div className='registerBtn'>
+            <div className='registerBtn' onClick={registerPage}>
                 REGISTER
             </div>
         </div>

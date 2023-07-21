@@ -6,6 +6,7 @@
 
 .pageImage{
     position: relative;
+    height: 100vh;
 }
 
 .pageImage::after{
@@ -27,7 +28,15 @@
     font-size: 60px;
     text-align: center;
     text-shadow: 4px 4px 10px grey;
-    padding-top: 180px;
+    padding-top: 150px;
+}
+
+.registerTitle{
+    font-family: "ExoBold";
+    font-size: 60px;
+    text-align: center;
+    text-shadow: 4px 4px 10px grey;
+    padding-top: 80px;
 }
 
 .spanTitle{
@@ -66,7 +75,7 @@
     background-color: #fd9983;
     width: 230px;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 50px;
     padding-top: 5px;
     padding-bottom: 5px;
     box-shadow: 2px 2px 10px grey;
@@ -86,6 +95,22 @@
     padding-top: 5px;
     padding-bottom: 5px;
     border: solid 3px white;
+    box-shadow: 2px 2px 10px grey;
+    cursor: pointer;
+}
+
+.registerBtn2{
+    font-family: "Poppins";
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #fd9983;
+    width: 230px;
+    margin: auto;
+    margin-top: 90px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     box-shadow: 2px 2px 10px grey;
     cursor: pointer;
 }

@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import TextInputBox from './component/TextInputBox';
 
-function Login(){
+function Register(){
     const navigate = useNavigate();
 
-    const loginAction = e => {
+    const registerAction = e => {
 
     }
 
     const backAction = (e) => {
-        window.history.back(); 
+        window.history.back();
     }
 
     return(
@@ -18,11 +18,11 @@ function Login(){
             <div onClick={backAction}>
                 <img className='backArrow' src="/assets/adminImage/backArrow.png"></img>
             </div>
-            <div className='title'>
-                <span style={{color:"#717171"}}>LOGIN</span><br></br>
+            <div className='registerTitle'>
+                <span style={{color:"#717171"}}>REGISTER</span><br></br>
                 <span className='spanTitle'>PAGE</span>
             </div>
-            <div className="loginPart">
+            <div className="registerPart">
                 <TextInputBox
                     inputboxName={"ID"}
                     imgSRC={"/assets/adminImage/idImage.png"}
@@ -33,8 +33,13 @@ function Login(){
                     imgSRC={"/assets/adminImage/pwImage.png"}
                     placeholderText={'패스워드'}
                 />
-                <div className='loginBtn2' onClick={loginAction}>
-                    LOGIN
+                <TextInputBox
+                    inputboxName={"Confirm Password"}
+                    imgSRC={"/assets/adminImage/pwImage.png"}
+                    placeholderText={'패스워드 확인'}
+                />
+                <div className='registerBtn2' onClick={registerAction}>
+                    Create
                 </div>
             </div>
         </div>
@@ -43,4 +48,4 @@ function Login(){
     )
 }
 
-export default Login;
+export default Register;
