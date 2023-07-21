@@ -1,5 +1,7 @@
 package com.service.teamcc.data.entity;
 
+import com.service.teamcc.data.dto.ActivityDTO;
+import com.service.teamcc.data.dto.AdminDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -22,4 +24,11 @@ public class AdminEntity {
     @Id
     String id;
     String password;
+
+    public AdminDTO toDto(){
+        return AdminDTO.builder()
+            .id(id)
+            .password(password)
+            .build();
+    }
 }

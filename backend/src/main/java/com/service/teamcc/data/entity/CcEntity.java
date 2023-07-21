@@ -1,5 +1,7 @@
 package com.service.teamcc.data.entity;
 
+import com.service.teamcc.data.dto.ActivityDTO;
+import com.service.teamcc.data.dto.CcDTO;
 import com.service.teamcc.data.entity.compositeKey.CcPK;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
@@ -25,4 +27,16 @@ public class CcEntity {
     String image;
     String size;
     String mimetype;
+
+    public CcDTO toDto(){
+        return CcDTO.builder()
+            .adminId(compositeKey.getAdminId())
+            .teamNum(compositeKey.getTeamNum())
+            .activityId(compositeKey.getActivityId())
+            .activityIdx(compositeKey.getActivityIdx())
+            .image(image)
+            .size(size)
+            .mimetype(mimetype)
+            .build();
+    }
 }

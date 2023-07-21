@@ -1,5 +1,6 @@
 package com.service.teamcc.data.entity;
 
+import com.service.teamcc.data.dto.ActivityDTO;
 import com.service.teamcc.data.entity.compositeKey.ActivityPK;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
@@ -25,4 +26,14 @@ public class ActivityEntity {
     String activity;
     String score;
     String activityNum;
+
+    public ActivityDTO toDto(){
+        return ActivityDTO.builder()
+            .id(compositeKey.getId())
+            .adminId(compositeKey.getAdminId())
+            .activity(activity)
+            .score(score)
+            .activityNum(activityNum)
+            .build();
+    }
 }

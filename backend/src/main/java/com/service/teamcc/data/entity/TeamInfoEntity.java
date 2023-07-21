@@ -1,5 +1,7 @@
 package com.service.teamcc.data.entity;
 
+import com.service.teamcc.data.dto.ColorDTO;
+import com.service.teamcc.data.dto.TeamInfoDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -26,4 +28,15 @@ public class TeamInfoEntity {
     String backgroundImage;
     String backgroundMimetype;
     String state;
+
+    public TeamInfoDTO toDto(){
+        return TeamInfoDTO.builder()
+            .adminId(adminId)
+            .title(title)
+            .num(num)
+            .backgroundImage(backgroundImage)
+            .backgroundMimetype(backgroundMimetype)
+            .state(state)
+            .build();
+    }
 }

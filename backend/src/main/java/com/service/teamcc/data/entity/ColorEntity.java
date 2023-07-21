@@ -1,5 +1,7 @@
 package com.service.teamcc.data.entity;
 
+import com.service.teamcc.data.dto.CcDTO;
+import com.service.teamcc.data.dto.ColorDTO;
 import com.service.teamcc.data.entity.compositeKey.ColorPK;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
@@ -24,4 +26,11 @@ public class ColorEntity {
     @EmbeddedId
     ColorPK compositeKey;
     String color;
+    public ColorDTO toDto(){
+        return ColorDTO.builder()
+            .adminId(compositeKey.getAdminId())
+            .score(compositeKey.getScore())
+            .color(color)
+            .build();
+    }
 }
