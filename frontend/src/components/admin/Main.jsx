@@ -6,16 +6,19 @@ import Table from './component/Table';
 function Main(){
     const navigate = useNavigate();
 
+    
+
     return(
         <div className='tableWrapper'>   
             <TableTitle
             tableTitle="TeamCC Activity"
                 
             />
-            
+            <br></br>
             <Table
 
             />
+            
         </div>
         
     )

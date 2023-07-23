@@ -44,18 +44,18 @@
 .tableCSS{
     margin-top: 10px;
     background-color: #F3F6F9;
-    
-    border-collapse: collapse;
+    /* border-collapse: collapse; */
 }
 
 .tableFirstCol{   
     font-size: 11px;
+    text-align: center;
 }
 
 .tableSecondCol{
     color: #82829F;
     font-size: 11px;
-    width: 200px;
+    width: 40vw;
     text-align: left;
 }
 
@@ -67,5 +67,20 @@
 }
 
 .deleteBtn{
-    width: 20px;
+    height: 15px;
+}
+
+.activityInput{
+    font-size: 11px;
+    text-align: center;
+    background-color: #F3F6F9;
+    border: none;
+    border-radius: 2px;
+    padding: 4px;
+    font-weight: 600;
+}
+
+table{
+    border-collapse: collapse;
+    border-radius: 10px;
 }
