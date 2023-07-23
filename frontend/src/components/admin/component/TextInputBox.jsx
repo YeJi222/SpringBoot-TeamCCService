@@ -5,6 +5,12 @@ function TextInputBox(props){
     const inputboxName = props.inputboxName;
     const imgSRC = props.imgSRC;
     const placeholderText = props.placeholderText;
+    const setFunc = props.setFunc;
+
+    const changeInput = (e) => {
+        // console.log(e.target.value);
+        setFunc(e.target.value);
+    }
 
     return(
         <div className='boxHeader'>
@@ -21,6 +27,7 @@ function TextInputBox(props){
                         name="id" 
                         required type="text"
                         placeholder={placeholderText}
+                        onChange={changeInput}
                     ></input>
                 </div>
             </div>
