@@ -5,7 +5,9 @@ function TextInputBox(props){
     const inputboxName = props.inputboxName;
     const imgSRC = props.imgSRC;
     const placeholderText = props.placeholderText;
+    const argument = props.argument;
     const setFunc = props.setFunc;
+    const errorMsg = props.errorMsg;
 
     const changeInput = (e) => {
         // console.log(e.target.value);
@@ -32,7 +34,16 @@ function TextInputBox(props){
                 </div>
             </div>
             <hr></hr>
-            
+            {
+                inputboxName === 'ID' ? (
+                    console.log("id")
+                ) : inputboxName === 'Password' ? (
+                    console.log("pw")
+                ) : (
+                    console.log("confirmPW")
+                )
+            }
+            <div className='errorMessage'>{errorMsg}</div>
         </div>
         
     )

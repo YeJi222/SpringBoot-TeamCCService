@@ -28,9 +28,16 @@
     background-color: #fd9983;
     width: 230px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 90px;
     padding-top: 5px;
     padding-bottom: 5px;
     box-shadow: 2px 2px 10px grey;
     cursor: pointer;
+}
+
+.errorMessage{
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 12px;
+    color: red;
 }
