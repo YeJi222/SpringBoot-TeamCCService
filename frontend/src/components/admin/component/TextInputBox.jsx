@@ -9,8 +9,9 @@ function TextInputBox(props){
     const setFunc = props.setFunc;
     const confirmArgu = props.confirmArgu;
     const errorMsg = props.errorMsg;
+    var inputType = "";
 
-    console.log(confirmArgu);
+    // console.log(confirmArgu);
 
     const changeInput = (e) => {
         // console.log(e.target.value);
@@ -27,25 +28,26 @@ function TextInputBox(props){
                     <img className='iconCSS' src={imgSRC}></img>
                 </div>
                 <div>
+                    <div style={{display:'none'}}>
+                        {
+                            inputboxName === 'ID' ? (
+                                inputType = "text"
+                            ) : (
+                                inputType = "password"
+                            )
+                        }
+                    </div>
+
                     <input id={inputboxName + "_id"} 
                         class="inputBox"
-                        name="id" 
-                        required type="text"
+                        name="id"
+                        required type={inputType}
                         placeholder={placeholderText}
                         onChange={changeInput}
                     ></input>
                 </div>
             </div>
             <hr></hr>
-            {/* {
-                inputboxName === 'ID' ? (
-                    console.log("id")
-                ) : inputboxName === 'Password' ? (
-                    console.log("pw")
-                ) : (
-                    console.log("confirmPW")
-                )
-            } */}
             {
                 confirmArgu === 'no' ? (
                     <div className='errorMessage'>{errorMsg}</div>

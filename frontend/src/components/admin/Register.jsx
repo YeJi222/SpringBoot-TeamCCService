@@ -19,10 +19,28 @@ function Register(){
         console.log("userPw", pw);
         console.log("checkPw", checkPw);
 
-        if(pw != checkPw){
+        if(id === '' || pw === '' || checkPw === ''){
+            let timerInterval;
+                Swal.fire({
+                    title: '빈칸이 있습니다',
+                    html: '입력 후 Create 버튼을 눌러주세요 :)',
+                    timer: 1200,
+                    timerProgressBar: true,
+                    didOpen: () => {
+                        Swal.showLoading()
+                    },
+                    willClose: () => {
+                        clearInterval(timerInterval)
+                    }
+                    }).then((result) => {
+                    /* Read more about handling dismissals below */
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                    }
+                })
+        } else if(pw != checkPw){
             let timerInterval;
             Swal.fire({
-                title: '올바른 내용을 입력해주세요',
+                title: '비밀번호가 다릅니다',
                 html: '확인 후, Create 버튼을 눌러주세요 :) ',
                 timer: 1000,
                 timerProgressBar: true,
@@ -83,8 +101,8 @@ function Register(){
                     let timerInterval;
                     Swal.fire({
                         title: '이미 등록된 회원입니다',
-                        html: '기존의 아이디로 로그인 해주세요 :) ',
-                        timer: 2000,
+                        html: '다른 아이디로 회원가입 해주세요 :) ',
+                        timer: 1500,
                         timerProgressBar: true,
                         didOpen: () => {
                             Swal.showLoading()
