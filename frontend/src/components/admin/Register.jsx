@@ -7,7 +7,7 @@ import axios from "axios";
 function Register(){
     const [id, setId] = useState("");
     const [pw, setPw] = useState("");
-    const [confirmPw, setConfirmPw] = useState("");
+    const [checkPw, setCheckPw] = useState("");
     const navigate = useNavigate();
 
     const registerAction = e => {
@@ -17,9 +17,9 @@ function Register(){
 
         console.log("userId", id);
         console.log("userPw", pw);
-        console.log("confirmPw", confirmPw);
+        console.log("checkPw", checkPw);
 
-        if(pw != confirmPw){
+        if(pw != checkPw){
             let timerInterval;
             Swal.fire({
                 title: '올바른 내용을 입력해주세요',
@@ -44,7 +44,7 @@ function Register(){
             })
             .then(function(response){
                 if(response.data === "signUp success"){
-                    // 알림창 띄우고, login 화면으로
+                    // 알림창 띄우고, main 화면으로
                     let timerInterval;
                     Swal.fire({
                         title: '회원가입 완료!',
@@ -138,8 +138,8 @@ function Register(){
                     inputboxName={"Confirm Password"}
                     imgSRC={"/assets/adminImage/pwImage.png"}
                     placeholderText={'패스워드 확인'}
-                    argument={confirmPw}
-                    setFunc={setConfirmPw}
+                    argument={checkPw}
+                    setFunc={setCheckPw}
                     errorMsg={"비밀번호가 일치하지 않습니다"}
                 />
                 <div className='registerBtn2' onClick={registerAction}>

@@ -7,7 +7,10 @@ function TextInputBox(props){
     const placeholderText = props.placeholderText;
     const argument = props.argument;
     const setFunc = props.setFunc;
+    const confirmArgu = props.confirmArgu;
     const errorMsg = props.errorMsg;
+
+    console.log(confirmArgu);
 
     const changeInput = (e) => {
         // console.log(e.target.value);
@@ -34,7 +37,7 @@ function TextInputBox(props){
                 </div>
             </div>
             <hr></hr>
-            {
+            {/* {
                 inputboxName === 'ID' ? (
                     console.log("id")
                 ) : inputboxName === 'Password' ? (
@@ -42,8 +45,15 @@ function TextInputBox(props){
                 ) : (
                     console.log("confirmPW")
                 )
+            } */}
+            {
+                confirmArgu === 'no' ? (
+                    <div className='errorMessage'>{errorMsg}</div>
+                ) : (
+                    <div className='errorMessage'></div>
+                )
             }
-            <div className='errorMessage'>{errorMsg}</div>
+            
         </div>
         
     )
