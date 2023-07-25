@@ -1,0 +1,27 @@
+.podiumPart{
+    text-align: center;
+    font-family: 'Poppins';
+    font-style: italic;
+    font-size: 25px;
+    color: #475895;
+}
+.podiumImg{
+    width: 95%;
+    margin-top: -23px;
+}
+
+.firstPrize{
+    
+}
+.secondPrize{
+    position: absolute;
+    left: 0;
+    margin-left: 33px;
+    margin-top: -20px;
+}
+.thirdPrize{
+    position: absolute;
+    right: 0;
+    margin-right: 33px;
+    margin-top: -10px;
+}
