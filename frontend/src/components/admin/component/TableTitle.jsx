@@ -19,9 +19,9 @@ function TableTitle(props){
                 View Credit Card Image
             </div>
 
-            <div className='thirdCol'>
+            {/* <div className='thirdCol'>
                 Create Activity
-            </div>
+            </div> */}
         </div>
         
     )

@@ -1,0 +1,72 @@
+/* NavBar */
+#commonNavBar{
+    font-weight: 600;
+    font-family: 'Poppins';
+    /* background-color: rgba(0, 0, 0, 0.5) !important; */
+    background-color: #787878 !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+.navBarTitle{
+    color: white !important;
+    font-size: 15px;
+}
+.navBarCSS{
+    color: white !important;
+    font-size: 12px;
+}
+.togglerCSS{
+    border: none !important;
+    padding-right: 0px !important;
+}
+button:focus{
+    outline: none !important;
+}
+/* HeaderImage */
+.headerImageCSS{
+    margin-top: 48px;
+    width: 100%;
+    height: 200px;
+    background-attachment: scroll;
+    background-size: cover;
+    background-image: url('/assets/commonImage/default_background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 10vh;
+    padding-bottom: 20vh;
+    margin-bottom: 10px;
+}
+.teamTitleCSS{
+    font-family: 'DoHyeon';
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* Footer */
+.footerTextCSS{
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    font-family: 'Popppins';
+    font-weight: 700;
+}
+
+.footerCSS{
+    width: 100%;
+    height: 5%;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    background-color: #787878 !important;
+    padding-top: 12px;
+    bottom: 0;
+}
+.fixedFooter{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
