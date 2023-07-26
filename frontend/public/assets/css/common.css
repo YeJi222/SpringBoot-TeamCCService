@@ -25,6 +25,7 @@
 button:focus{
     outline: none !important;
 }
+
 /* HeaderImage */
 .headerImageCSS{
     margin-top: 48px;
@@ -69,4 +70,13 @@ button:focus{
     position: fixed;
     left: 0;
     bottom: 0;
+}
+
+/* back arrow */
+.backArrowFixed{
+    position: fixed;
+    width: 25px;
+    margin: 8px;
+    cursor: pointer;
+    z-index: 1;
 }

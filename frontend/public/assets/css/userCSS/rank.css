@@ -25,3 +25,67 @@
     margin-right: 33px;
     margin-top: -10px;
 }
+
+.rankTablePart{
+    margin: 10px;
+    margin-left: 22px;
+    margin-right: 22px;
+}
+.rankLeftBlock{
+    background-color: #F3F6F9;
+    border-radius: 10px;
+    width: 130px;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.rankRightBlock{
+    background-color: #F3F6F9;
+    border-radius: 10px;
+    width: 250px;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 25px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 40px;
+    margin-left: 95px;
+    margin-top: -35px;
+    display: flex;
+}
+.infoPart{
+    flex: 1;
+}
+.teamName{
+    font-size: 13px;
+    color: #797270;
+}
+.totalScore{
+    font-size: 10px;
+    color: #B6988E;
+}
+.medalImage{
+    width: 25px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.semiBlockTop{
+    background-color: #D9D9D9;
+    height: 7px;
+    width: 210px;
+    border-radius: 10px;
+    margin-left: 133px;
+    margin-top: -60px;
+}
+.semiBlockBottom{
+    background-color: #D9D9D9;
+    height: 7px;
+    width: 90px;
+    border-radius: 10px;
+    margin-left: 3px;
+    margin-top: 43px;
+}
