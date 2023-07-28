@@ -39,7 +39,7 @@ function TextInputBox(props){
                     </div>
 
                     <input id={inputboxName + "_id"} 
-                        class="inputBox"
+                        className="inputBox"
                         name="id"
                         required type={inputType}
                         placeholder={placeholderText}
