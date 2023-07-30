@@ -14,3 +14,8 @@ Gradle - Groovy : Groovy가 java와 비슷
 출처 : https://dev-coco.tistory.com/65
 
 <img width="820" alt="image" src="https://github.com/YeJi222/Ver2.0/assets/70511859/0e030e74-b1ca-4d50-9872-04ca01840eff">
+
+## Trouble Shooting
+[IntelliJ 실행 오류가 보이지 않을 때]    
+- Preferences -> Build, Execution, Deployment -> Gradle -> Build and run using과 Run tests using 모두 IntelliJ IDEA로 변경
+<img width="546" alt="image" src="https://github.com/YeJi222/Ver2.0/assets/70511859/c9d36086-8c49-4ce6-bd0d-236eccaab516">
