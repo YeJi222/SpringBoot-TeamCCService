@@ -19,3 +19,11 @@ Gradle - Groovy : Groovy가 java와 비슷
 [IntelliJ 실행 오류가 보이지 않을 때]    
 - Preferences -> Build, Execution, Deployment -> Gradle -> Build and run using과 Run tests using 모두 IntelliJ IDEA로 변경
 <img width="546" alt="image" src="https://github.com/YeJi222/Ver2.0/assets/70511859/c9d36086-8c49-4ce6-bd0d-236eccaab516">
+
+[자주하는 어노테이션 실수...]
+Description:   
+Parameter 0 of constructor in com.service.teamcc.data.handler.Impl.ActivityHandlerImpl required a bean of type 'com.service.teamcc.data.dao.ActivityDAO' that could not be found.   
+Action:   
+Consider defining a bean of type 'com.service.teamcc.data.dao.ActivityDAO' in your configuration.   
+=> ActivityDAOImpl.javva 파일에 @Service 어노테이션 빠져서 생긴 에러
+
