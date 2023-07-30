@@ -47,7 +47,8 @@ function Main(){
                 data: formData
             })
             .then(function(response){
-                console.log(response.data);
+                console.log(response.data.activityList);
+                setActivityList(response.data.activityList);
                 // setGroupInfo(response.data);
                 // console.log("group Info", groupInfo);
             })
@@ -66,25 +67,29 @@ function Main(){
                     <TableTitle
                         tableTitle="TeamCC Activity"
                     />
-                    <Table/>
+                    <Table
+                        activityList={activityList}
+                    />
                     
                     <TableTitle
                         tableTitle="Sharing URL Link"
                     />
-                    <Table/>
+                    <Table
+                        activityList={activityList}
+                    />
                     
                     <TableTitle
                         tableTitle="Information"
                     />
-                    <Table/>
+                    <Table
+                        activityList={activityList}
+                    />
                     
                     
                 </div>
             </div>
             <Footer/>
         </div>
-        
-        
     )
 }
 

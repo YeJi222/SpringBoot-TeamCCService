@@ -29,7 +29,9 @@ public class AdminFuncController {
         HashMap<String, Object> map = new HashMap<>();
 
         List<ActivityDTO> activityDTOList = activityService.getActivityList(adminId);
-        System.out.println(activityDTOList);
+        map.put("activityList", activityDTOList);
+
+        // System.out.println(activityDTOList);
 
         return map;
     }
