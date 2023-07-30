@@ -22,4 +22,12 @@ public class ActivityDAOImpl implements ActivityDAO {
 
         return activityEntityList;
     }
+
+    @Override
+    public int deleteActivity(String adminId, String deleteId){
+        // int result = activityRepository.deleteByUserIdAndActivityId(adminId, deleteId);
+        int result = 1;
+
+        return result;
+    }
 }

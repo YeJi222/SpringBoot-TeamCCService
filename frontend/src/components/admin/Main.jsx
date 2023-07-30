@@ -15,6 +15,7 @@ function Main(){
 
     const storedData = localStorage.getItem('user');
     const sessionData = JSON.parse(storedData);
+    const userId = sessionData.userId;
 
     useEffect(() => {
         if(sessionData === null){
@@ -37,9 +38,8 @@ function Main(){
                 }
             })
         } else{
-            const sessionUserId = sessionData.userId;
             const formData = new FormData();
-            formData.append('userId', sessionUserId);
+            formData.append('userId', userId);
 
             axios({
                 method: "post",
@@ -47,7 +47,7 @@ function Main(){
                 data: formData
             })
             .then(function(response){
-                console.log(response.data.activityList);
+                // console.log(response.data.activityList);
                 setActivityList(response.data.activityList);
                 // setGroupInfo(response.data);
                 // console.log("group Info", groupInfo);
@@ -68,21 +68,27 @@ function Main(){
                         tableTitle="TeamCC Activity"
                     />
                     <Table
+                        userId={userId}
                         activityList={activityList}
+                        setActivityList={setActivityList}
                     />
                     
                     <TableTitle
                         tableTitle="Sharing URL Link"
                     />
                     <Table
+                        userId={userId}
                         activityList={activityList}
+                        setActivityList={setActivityList}
                     />
                     
                     <TableTitle
                         tableTitle="Information"
                     />
                     <Table
+                        userId={userId}
                         activityList={activityList}
+                        setActivityList={setActivityList}
                     />
                     
                     

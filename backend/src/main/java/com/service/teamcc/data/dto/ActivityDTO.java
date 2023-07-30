@@ -14,7 +14,7 @@ import lombok.ToString;
 @ToString
 @Builder
 public class ActivityDTO {
-    private String id;
+    private String activityId;
     private String adminId;
     private String activity;
     private String score;
@@ -22,7 +22,7 @@ public class ActivityDTO {
 
     public ActivityEntity toEntity(){
         ActivityPK pk = ActivityPK.builder()
-            .id(id)
+            .activityId(activityId)
             .adminId(adminId)
             .build();
 

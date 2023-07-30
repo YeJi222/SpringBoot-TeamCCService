@@ -24,12 +24,26 @@ public class AdminFuncController {
 
     @PostMapping(value = "/getActivityList")
     public HashMap<String, Object> getActivity(@RequestParam("userId") String adminId){
-        System.out.println(adminId);
-
         HashMap<String, Object> map = new HashMap<>();
 
         List<ActivityDTO> activityDTOList = activityService.getActivityList(adminId);
         map.put("activityList", activityDTOList);
+
+        // System.out.println(activityDTOList);
+
+        return map;
+    }
+
+    @PostMapping(value = "/deleteActivity")
+    public HashMap<String, Object> getActivity(
+        @RequestParam("userId") String userId, @RequestParam("deleteId") String deleteId){
+        System.out.println(deleteId);
+        HashMap<String, Object> map = new HashMap<>();
+
+
+
+//        List<ActivityDTO> activityDTOList = activityService.getActivityList(adminId);
+//        map.put("activityList", activityDTOList);
 
         // System.out.println(activityDTOList);
 

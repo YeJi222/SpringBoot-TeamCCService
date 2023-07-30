@@ -7,4 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface ActivityRepository extends JpaRepository<ActivityEntity, String> {
 
     List<ActivityEntity> findByCompositeKeyAdminId(String adminId);
+    // int deleteByUserIdAndActivityId(String userId, String deleteId);
 }

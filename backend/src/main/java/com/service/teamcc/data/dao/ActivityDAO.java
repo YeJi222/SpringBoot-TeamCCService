@@ -5,4 +5,5 @@ import java.util.List;
 
 public interface ActivityDAO {
     List<ActivityEntity> getActivityEntityList(String adminId);
+    int deleteActivity(String adminId, String deleteId);
 }

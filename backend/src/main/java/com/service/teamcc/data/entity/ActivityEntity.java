@@ -29,7 +29,7 @@ public class ActivityEntity {
 
     public ActivityDTO toDTO(){
         return ActivityDTO.builder()
-            .id(compositeKey.getId())
+            .activityId(compositeKey.getActivityId())
             .adminId(compositeKey.getAdminId())
             .activity(activity)
             .score(score)

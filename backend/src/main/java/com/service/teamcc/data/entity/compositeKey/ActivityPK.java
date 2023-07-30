@@ -16,13 +16,13 @@ import lombok.ToString;
 @ToString
 @Builder
 public class ActivityPK implements Serializable {
-    @Column(name = "id")
-    String id;
+    @Column(name = "activityId")
+    String activityId;
     @Column(name = "adminId")
     String adminId;
 
-    public String getId() {
-        return id;
+    public String getActivityId() {
+        return activityId;
     }
 
     public String getAdminId() {

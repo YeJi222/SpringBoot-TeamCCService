@@ -24,7 +24,6 @@ public class ActivityServiceImpl implements ActivityService {
         List<ActivityEntity> activityEntityList = activityHandler.getActivityEntityList(adminId);
 
         // Entity -> DTO 변환
-        // ActivityDTO activityDTO = activityEntityList.get(0).toDTO(); // test
         List<ActivityDTO> activityDTOList =
             activityEntityList.stream().map(ActivityEntity::toDTO).toList();
 
