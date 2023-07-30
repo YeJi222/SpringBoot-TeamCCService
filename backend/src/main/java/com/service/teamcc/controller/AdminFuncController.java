@@ -36,16 +36,19 @@ public class AdminFuncController {
 
     @PostMapping(value = "/deleteActivity")
     public HashMap<String, Object> getActivity(
-        @RequestParam("userId") String userId, @RequestParam("deleteId") String deleteId){
+        @RequestParam("userId") String adminId, @RequestParam("deleteId") String deleteId){
         System.out.println(deleteId);
         HashMap<String, Object> map = new HashMap<>();
 
-
-
-//        List<ActivityDTO> activityDTOList = activityService.getActivityList(adminId);
-//        map.put("activityList", activityDTOList);
-
-        // System.out.println(activityDTOList);
+        // delete activity + set activityList again and return
+        int result = activityService.deleteActivity(adminId, deleteId);
+        if(result == 1){ // 성공
+            map.put("deleteResult", "success");
+            List<ActivityDTO> activityDTOList = activityService.getActivityList(adminId);
+            map.put("activityList", activityDTOList);
+        } else{ // 실패
+            map.put("deleteResult", "fail");
+        }
 
         return map;
     }

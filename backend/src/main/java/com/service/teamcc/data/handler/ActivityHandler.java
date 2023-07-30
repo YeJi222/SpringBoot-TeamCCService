@@ -5,4 +5,5 @@ import java.util.List;
 
 public interface ActivityHandler {
     List<ActivityEntity> getActivityEntityList(String adminId);
+    int deleteActivity(String adminId, String deleteId);
 }

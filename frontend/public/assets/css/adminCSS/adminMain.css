@@ -101,7 +101,6 @@
 .deleteBtn{
     height: 15px;
 }
-
 .activityInput{
     font-size: 11px;
     text-align: center;
@@ -110,6 +109,17 @@
     border-radius: 2px;
     padding: 4px;
     font-weight: 600;
+}
+.addBtn{
+    font-size: 11px;
+    text-align: center;
+    background-color: #F3F6F9;
+    border: none;
+    color: black;
+    border-radius: 2px;
+    padding: 4px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 table{

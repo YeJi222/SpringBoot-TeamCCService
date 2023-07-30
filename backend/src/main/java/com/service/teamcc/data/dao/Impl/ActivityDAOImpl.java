@@ -25,9 +25,11 @@ public class ActivityDAOImpl implements ActivityDAO {
 
     @Override
     public int deleteActivity(String adminId, String deleteId){
-        // int result = activityRepository.deleteByUserIdAndActivityId(adminId, deleteId);
-        int result = 1;
+        int result = activityRepository.deleteByCompositeKeyAdminIdAndCompositeKeyActivityId(adminId, deleteId);
+        System.out.println("result num : " + result);
 
         return result;
     }
+
+
 }

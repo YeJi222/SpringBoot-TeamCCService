@@ -32,4 +32,10 @@ public class ActivityServiceImpl implements ActivityService {
         return activityDTOList;
     }
 
+    @Override
+    public int deleteActivity(String adminId, String deleteId){
+        int result = activityHandler.deleteActivity(adminId, deleteId);
+        return result;
+    }
+
 }

@@ -24,4 +24,11 @@ public class ActivityHandlerImpl implements ActivityHandler {
 
         return activityEntityList;
     }
+
+    @Override
+    public int deleteActivity(String adminId, String deleteId){
+        int result = activityDAO.deleteActivity(adminId, deleteId);
+
+        return result;
+    }
 }

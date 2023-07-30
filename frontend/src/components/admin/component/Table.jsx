@@ -1,18 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 function Table(props){
     const activityList = props.activityList;
     const setActivityList = props.setActivityList;
     const userId = props.userId;
     
-    const activityInsertAction = (e) => {
-        
+    const insertActivityAction = (e) => {
+        const formData = new FormData();
+        formData.append('userId', userId);
+
+        axios({
+            method: "post",
+            url: 'http://localhost:8090/insertActivity',
+            data: formData
+        })
+        .then(function(response){
+            if(response.data.insertResult === 'success'){
+                setActivityList(response.data.activityList);
+            } else{
+                console.log("Failed to insert");
+            }
+            
+        })
+        .catch(function(error){
+            console.log(error);
+        })
     }
 
     const deleteActivityAction = (e) => {
         const deleteId = e;
+        console.log("deleteId", deleteId);
+
         const formData = new FormData();
         formData.append('userId', userId);
         formData.append('deleteId', deleteId);
@@ -23,8 +44,13 @@ function Table(props){
             data: formData
         })
         .then(function(response){
-            // console.log(response.data.activityList);
-            // setActivityList(response.data.activityList);
+            // console.log(response.data.deleteResult);
+            if(response.data.deleteResult === 'success'){
+                setActivityList(response.data.activityList);
+            } else{
+                console.log("Failed to delete");
+            }
+            
         })
         .catch(function(error){
             console.log(error);
@@ -35,7 +61,7 @@ function Table(props){
         const activitiyRows = activityList.map((activity, idx) => {
             return(
                 <tr key={idx}>
-                    <td className='tableFirstCol'><div className='idNumberCSS'>{activity.activityId}</div></td>
+                    <td className='tableFirstCol'><div className='idNumberCSS'>{idx+1}</div></td>
                     <td className='tableTH, tableSecondCol'>{activity.activity}</td>
                     <td className='tableTH'>{activity.score} 학점</td>
                     <td className='tableTH'>{activity.multipleCount}회 가능</td>
@@ -43,7 +69,7 @@ function Table(props){
                         <img className='deleteBtn' 
                             src='/assets/adminImage/trashCan.png'
                             // 익명함수를 사용하지 않으면 이벤트 핸들러가 즉시 실행되어 버림
-                            onClick={() => deleteActivityAction(activity.id)} 
+                            onClick={() => deleteActivityAction(activity.activityId)} 
                         ></img>
                     </td>
                 </tr>
@@ -69,7 +95,11 @@ function Table(props){
                             <td className='tableTH, tableSecondCol'><input className='activityInput' style={{width:'40vw'}}  type="text" name="activity" placeholder="ex) 바다 가기" required/></td>
                             <td className='tableTH'><input className='activityInput' style={{width:'12vw'}} type="number" min="1" name="score" placeholder=" 5 " required/></td>
                             <td className='tableTH'><input className='activityInput' style={{width:'17vw'}} type="number" min="1" max="50" name="num" placeholder=" 5 " required/></td>
-                            <td className='tableTH'><input className='activityInput' style={{width:'10vw'}} type="submit" value="Add"></input></td>
+                            <td className='tableTH'>
+                                <div className='addBtn' style={{width:'10vw'}}
+                                    onClick={() => insertActivityAction} 
+                                >Add</div>
+                            </td>
                         </tr>
                     </tbody>
                     
