@@ -25,7 +25,7 @@ public class ActivityEntity {
     ActivityPK compositeKey;
     String activity;
     String score;
-    String activityNum;
+    String multipleCount;
 
     public ActivityDTO toDto(){
         return ActivityDTO.builder()
@@ -33,7 +33,7 @@ public class ActivityEntity {
             .adminId(compositeKey.getAdminId())
             .activity(activity)
             .score(score)
-            .activityNum(activityNum)
+            .multipleCount(multipleCount)
             .build();
     }
 }

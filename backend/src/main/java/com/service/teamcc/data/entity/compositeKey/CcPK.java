@@ -16,13 +16,13 @@ import lombok.ToString;
 @ToString
 @Builder
 public class CcPK implements Serializable {
-    @Column(name = "adminId")
+    @Column(name = "adminId", length = 250)
     String adminId;
-    @Column(name = "teamNum")
+    @Column(name = "teamNum", length = 200)
     String teamNum;
-    @Column(name = "activityId")
+    @Column(name = "activityId", length = 100)
     String activityId;
-    @Column(name = "activityIdx")
+    @Column(name = "activityIdx", length = 100)
     String activityIdx;
 
     public String getAdminId() {
