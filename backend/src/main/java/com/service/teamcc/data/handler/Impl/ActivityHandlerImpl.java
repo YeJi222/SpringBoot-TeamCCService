@@ -1,12 +1,9 @@
 package com.service.teamcc.data.handler.Impl;
 
 import com.service.teamcc.data.dao.ActivityDAO;
-import com.service.teamcc.data.dao.AdminDAO;
-import com.service.teamcc.data.dto.ActivityDTO;
-import com.service.teamcc.data.dto.AdminDTO;
 import com.service.teamcc.data.entity.ActivityEntity;
-import com.service.teamcc.data.entity.AdminEntity;
 import com.service.teamcc.data.handler.ActivityHandler;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,10 +19,9 @@ public class ActivityHandlerImpl implements ActivityHandler {
     }
 
     @Override
-    public ActivityDTO getActivityEntity(String userId){
-        ActivityEntity activityEntity = activityDAO.getActivity(userId);
-        ActivityDTO activity = new ActivityDTO(activityEntity.getActivity());
+    public List<ActivityEntity> getActivityEntityList(String userId){
+        List<ActivityEntity> activityEntityList = activityDAO.getActivityEntityList(userId);
 
-        return activity;
+        return activityEntityList;
     }
 }

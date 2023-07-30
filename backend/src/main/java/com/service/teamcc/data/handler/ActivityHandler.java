@@ -1,5 +1,8 @@
 package com.service.teamcc.data.handler;
 
-public interface ActivityHandler {
+import com.service.teamcc.data.entity.ActivityEntity;
+import java.util.List;
 
+public interface ActivityHandler {
+    List<ActivityEntity> getActivityEntityList(String userId);
 }

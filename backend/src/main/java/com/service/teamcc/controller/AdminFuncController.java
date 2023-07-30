@@ -1,9 +1,11 @@
 package com.service.teamcc.controller;
 
 import com.service.teamcc.data.dto.AdminDTO;
+import com.service.teamcc.data.entity.ActivityEntity;
 import com.service.teamcc.data.service.ActivityService;
 import com.service.teamcc.data.service.AdminService;
 import java.util.HashMap;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +24,9 @@ public class AdminFuncController {
     @PostMapping(value = "/getActivityList")
     public HashMap<String, Object> getActivity(@RequestParam("userId") String userId){
         HashMap<String, Object> map = new HashMap<>();
+
+//        List<ActivityEntity> activityEntityList = activityService.getActivityList(userId);
+//        System.out.println(activityEntityList);
 
 
         return map;
