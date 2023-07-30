@@ -19,8 +19,8 @@ public class ActivityHandlerImpl implements ActivityHandler {
     }
 
     @Override
-    public List<ActivityEntity> getActivityEntityList(String userId){
-        List<ActivityEntity> activityEntityList = activityDAO.getActivityEntityList(userId);
+    public List<ActivityEntity> getActivityEntityList(String adminId){
+        List<ActivityEntity> activityEntityList = activityDAO.getActivityEntityList(adminId);
 
         return activityEntityList;
     }

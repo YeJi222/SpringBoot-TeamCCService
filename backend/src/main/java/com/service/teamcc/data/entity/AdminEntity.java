@@ -25,7 +25,7 @@ public class AdminEntity {
     String id;
     String password;
 
-    public AdminDTO toDto(){
+    public AdminDTO toDTO(){
         return AdminDTO.builder()
             .id(id)
             .password(password)

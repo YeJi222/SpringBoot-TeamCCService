@@ -1,9 +1,12 @@
 package com.service.teamcc.data.service.Impl;
 
+import com.service.teamcc.data.dao.ActivityDAO;
+import com.service.teamcc.data.dto.ActivityDTO;
 import com.service.teamcc.data.entity.ActivityEntity;
 import com.service.teamcc.data.handler.ActivityHandler;
 import com.service.teamcc.data.service.ActivityService;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +20,17 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
     @Override
-    public List<ActivityEntity> getActivityList(String userId){
-        return activityHandler.getActivityEntityList(userId);
+    public List<ActivityDTO> getActivityList(String adminId){
+        List<ActivityEntity> activityEntityList = activityHandler.getActivityEntityList(adminId);
+
+        // Entity -> DTO 변환
+        // ActivityDTO activityDTO = activityEntityList.get(0).toDTO(); // test
+        List<ActivityDTO> activityDTOList =
+            activityEntityList.stream().map(ActivityEntity::toDTO).toList();
+
+        // System.out.println("activityDTOList : " + activityDTOList);
+
+        return activityDTOList;
     }
 
 }

@@ -1,5 +1,6 @@
 package com.service.teamcc.controller;
 
+import com.service.teamcc.data.dto.ActivityDTO;
 import com.service.teamcc.data.dto.AdminDTO;
 import com.service.teamcc.data.entity.ActivityEntity;
 import com.service.teamcc.data.service.ActivityService;
@@ -22,12 +23,13 @@ public class AdminFuncController {
     }
 
     @PostMapping(value = "/getActivityList")
-    public HashMap<String, Object> getActivity(@RequestParam("userId") String userId){
+    public HashMap<String, Object> getActivity(@RequestParam("userId") String adminId){
+        System.out.println(adminId);
+
         HashMap<String, Object> map = new HashMap<>();
 
-//        List<ActivityEntity> activityEntityList = activityService.getActivityList(userId);
-//        System.out.println(activityEntityList);
-
+        List<ActivityDTO> activityDTOList = activityService.getActivityList(adminId);
+        System.out.println(activityDTOList);
 
         return map;
     }

@@ -28,7 +28,7 @@ public class ViewCountEntity {
     String month;
     String day;
 
-    public ViewCountDTO toDto(){
+    public ViewCountDTO toDTO(){
         return ViewCountDTO.builder()
             .id(id)
             .count(count)

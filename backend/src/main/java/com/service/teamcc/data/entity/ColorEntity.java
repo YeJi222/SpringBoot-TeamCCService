@@ -26,7 +26,7 @@ public class ColorEntity {
     @EmbeddedId
     ColorPK compositeKey;
     String color;
-    public ColorDTO toDto(){
+    public ColorDTO toDTO(){
         return ColorDTO.builder()
             .adminId(compositeKey.getAdminId())
             .score(compositeKey.getScore())

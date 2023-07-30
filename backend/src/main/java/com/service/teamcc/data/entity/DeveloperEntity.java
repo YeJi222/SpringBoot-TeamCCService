@@ -25,7 +25,7 @@ public class DeveloperEntity {
     String id;
     String password;
 
-    public DeveloperDTO toDto(){
+    public DeveloperDTO toDTO(){
         return DeveloperDTO.builder()
             .id(id)
             .password(password)

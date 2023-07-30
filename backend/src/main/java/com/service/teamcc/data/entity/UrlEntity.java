@@ -26,7 +26,7 @@ public class UrlEntity {
     UrlPK compositeKey;
     String url;
 
-    public UrlDTO toDto(){
+    public UrlDTO toDTO(){
         return UrlDTO.builder()
             .adminId(compositeKey.getAdminId())
             .teamNum(compositeKey.getTeamNum())

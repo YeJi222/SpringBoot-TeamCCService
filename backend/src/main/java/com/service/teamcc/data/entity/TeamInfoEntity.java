@@ -29,7 +29,7 @@ public class TeamInfoEntity {
     String backgroundMimetype;
     String state;
 
-    public TeamInfoDTO toDto(){
+    public TeamInfoDTO toDTO(){
         return TeamInfoDTO.builder()
             .adminId(adminId)
             .title(title)

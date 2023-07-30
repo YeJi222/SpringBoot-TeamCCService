@@ -28,7 +28,7 @@ public class CcEntity {
     String size;
     String mimetype;
 
-    public CcDTO toDto(){
+    public CcDTO toDTO(){
         return CcDTO.builder()
             .adminId(compositeKey.getAdminId())
             .teamNum(compositeKey.getTeamNum())

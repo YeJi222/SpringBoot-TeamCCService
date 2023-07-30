@@ -1,6 +1,7 @@
 package com.service.teamcc.data.dao.Impl;
 
 import com.service.teamcc.data.dao.ActivityDAO;
+import com.service.teamcc.data.dto.ActivityDTO;
 import com.service.teamcc.data.entity.ActivityEntity;
 import com.service.teamcc.data.repository.ActivityRepository;
 import java.util.List;
@@ -16,8 +17,8 @@ public class ActivityDAOImpl implements ActivityDAO {
         this.activityRepository = activityRepository;
     }
     @Override
-    public List<ActivityEntity> getActivityEntityList(String userId){
-        List<ActivityEntity> activityEntityList = (List<ActivityEntity>) activityRepository.getReferenceById(userId);
+    public List<ActivityEntity> getActivityEntityList(String adminId){
+        List<ActivityEntity> activityEntityList = activityRepository.findByCompositeKeyAdminId(adminId);
 
         return activityEntityList;
     }
