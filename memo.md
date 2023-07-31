@@ -32,6 +32,9 @@ Caused by: java.sql.SQLException: Specified key was too long; max key length is 
 => pk 여러개 설정시 인덱싱 사이즈가 3072 바이트를 넘길 수 없다. default로 String 타입이 Varchar(255)로 DDL이 설정되기 때문에, 아래와 같이 Varchar length를 조절해주어야 한다.   
 <img width="367" alt="image" src="https://github.com/YeJi222/Ver2.0/assets/70511859/5d77f29e-d0e4-46e8-85ab-c3cc472c4186">
 
+### [자동생성 pk]
+=> 복합키는 pk 자동생성이 불가능하다..
+
 ## 참고 글
 ### [DTO <-> Entity 변환 작업 어디서 하면 좋을까?]
 Link: https://velog.io/@jsb100800/Spring-boot-DTO-Entity-%EA%B0%84-%EB%B3%80%ED%99%98-%EC%96%B4%EB%8A%90-Layer%EC%97%90%EC%84%9C-%ED%95%98%EB%8A%94%EA%B2%8C-%EC%A2%8B%EC%9D%84%EA%B9%8C     
