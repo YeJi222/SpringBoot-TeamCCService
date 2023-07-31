@@ -2,6 +2,8 @@ package com.service.teamcc.data.entity.compositeKey;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,11 +19,11 @@ import lombok.ToString;
 @Builder
 public class ActivityPK implements Serializable {
     @Column(name = "activityId")
-    String activityId;
+    int activityId;
     @Column(name = "adminId")
     String adminId;
 
-    public String getActivityId() {
+    public int getActivityId() {
         return activityId;
     }
 

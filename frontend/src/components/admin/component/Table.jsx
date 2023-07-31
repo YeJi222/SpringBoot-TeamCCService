@@ -9,8 +9,17 @@ function Table(props){
     const userId = props.userId;
     
     const insertActivityAction = (e) => {
+        const activity = document.getElementById("")
+
         const formData = new FormData();
         formData.append('userId', userId);
+        // formData.append('activity', activity);
+        // formData.append('score', score);
+        // formData.append('multipleCount', multipleCount);
+
+        formData.append('activity', userId);
+        formData.append('score', userId);
+        formData.append('multipleCount', userId);
 
         axios({
             method: "post",
@@ -78,6 +87,7 @@ function Table(props){
 
         return(
             <div>
+                <form onSubmit={insertActivityAction}>
                 <table className='tablePart'>
                     <thead>
                         <tr className='tableCSS'>
@@ -92,20 +102,22 @@ function Table(props){
                         {activitiyRows}
                         <tr>
                             <td className='tableFirstCol'>+</td>
-                            <td className='tableTH, tableSecondCol'><input className='activityInput' style={{width:'40vw'}}  type="text" name="activity" placeholder="ex) 바다 가기" required/></td>
-                            <td className='tableTH'><input className='activityInput' style={{width:'12vw'}} type="number" min="1" name="score" placeholder=" 5 " required/></td>
-                            <td className='tableTH'><input className='activityInput' style={{width:'17vw'}} type="number" min="1" max="50" name="num" placeholder=" 5 " required/></td>
-                            <td className='tableTH'>
-                                <div className='addBtn' style={{width:'10vw'}}
-                                    onClick={() => insertActivityAction} 
-                                >Add</div>
-                            </td>
+                            
+                                <td className='tableTH, tableSecondCol'><input className='activityInput' style={{width:'40vw'}}  type="text" name="activity" placeholder="ex) 바다 가기" required/></td>
+                                <td className='tableTH'><input className='activityInput' style={{width:'12vw'}} type="number" min="1" name="score" placeholder=" 5 " required/></td>
+                                <td className='tableTH'><input className='activityInput' style={{width:'17vw'}} type="number" min="1" max="50" name="num" placeholder=" 5 " required/></td>
+                                <td className='tableTH'>
+                                    <input type="submit" className='addBtn' style={{width:'10vw'}}
+                                        // onClick={() => insertActivityAction} 
+                                        value='Add'
+                                    ></input>
+                                </td>
                         </tr>
                     </tbody>
                     
                     
                 </table>
-                
+                </form>
             </div>
             
         )

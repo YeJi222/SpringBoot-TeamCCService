@@ -7,4 +7,5 @@ import java.util.List;
 public interface ActivityService {
     List<ActivityDTO> getActivityList(String adminId);
     int deleteActivity(String adminId, String deleteId);
+    int insertActivity(String adminId, String activity, String score, String multipleCount);
 }

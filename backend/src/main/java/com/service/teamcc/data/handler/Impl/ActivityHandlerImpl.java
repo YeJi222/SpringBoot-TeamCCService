@@ -31,4 +31,11 @@ public class ActivityHandlerImpl implements ActivityHandler {
 
         return result;
     }
+
+    @Override
+    public int insertActivity(String adminId, String activity, String score, String multipleCount){
+        int result = activityDAO.insertActivity(adminId, activity, score, multipleCount);
+
+        return result;
+    }
 }

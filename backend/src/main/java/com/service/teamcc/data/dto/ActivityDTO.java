@@ -14,7 +14,7 @@ import lombok.ToString;
 @ToString
 @Builder
 public class ActivityDTO {
-    private String activityId;
+    private int activityId;
     private String adminId;
     private String activity;
     private String score;

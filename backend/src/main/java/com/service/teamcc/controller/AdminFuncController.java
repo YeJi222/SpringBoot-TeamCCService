@@ -52,4 +52,23 @@ public class AdminFuncController {
 
         return map;
     }
+
+    @PostMapping(value = "/insertActivity")
+    public HashMap<String, Object> getActivity(@RequestParam("userId") String adminId,
+        @RequestParam("activity") String activity, @RequestParam("score") String score,
+        @RequestParam("multipleCount") String multipleCount){
+        HashMap<String, Object> map = new HashMap<>();
+
+        // delete activity + set activityList again and return
+        int result = activityService.insertActivity(adminId, activity, score, multipleCount);
+        if(result == 1){ // 성공
+            map.put("insertResult", "success");
+            List<ActivityDTO> activityDTOList = activityService.getActivityList(adminId);
+            map.put("activityList", activityDTOList);
+        } else{ // 실패
+            map.put("insertResult", "fail");
+        }
+
+        return map;
+    }
 }
