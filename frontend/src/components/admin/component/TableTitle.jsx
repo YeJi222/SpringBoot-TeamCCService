@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
 function TableTitle(props){
+    const tableName = props.tableName;
     const tableTitle = props.tableTitle;
-    const activityList = props.activityList;
+    const tableList = props.tableList;
 
-    if(activityList !== undefined){
-        var activityListLen = activityList.length;
+    if(tableList !== undefined){
+        var listLen = tableList.length;
 
         return(
             <div className='gridContainer'>
@@ -14,9 +15,18 @@ function TableTitle(props){
                     <div className='tableTitle'>
                         {tableTitle}
                     </div>
-                    <div className='tableSubTitle'>
-                        Total {activityListLen} activities
-                    </div>
+                    {
+                        tableName === 'activityTable' ? (
+                            <div className='tableSubTitle'>
+                                Total {listLen} activities
+                            </div>
+                        ) : (
+                            <div className='tableSubTitle'>
+                                Total {listLen} teams
+                            </div>
+                        )
+                    }
+                    
                 </div>
 
                 <div className='secondCol'>

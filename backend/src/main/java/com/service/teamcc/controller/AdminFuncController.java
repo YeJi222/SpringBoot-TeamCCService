@@ -2,9 +2,11 @@ package com.service.teamcc.controller;
 
 import com.service.teamcc.data.dto.ActivityDTO;
 import com.service.teamcc.data.dto.AdminDTO;
+import com.service.teamcc.data.dto.UrlDTO;
 import com.service.teamcc.data.entity.ActivityEntity;
 import com.service.teamcc.data.service.ActivityService;
 import com.service.teamcc.data.service.AdminService;
+import com.service.teamcc.data.service.UrlService;
 import java.util.HashMap;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AdminFuncController {
     private ActivityService activityService;
+    private UrlService urlService;
     @Autowired
-    public AdminFuncController(ActivityService activityService){
+    public AdminFuncController(ActivityService activityService, UrlService urlService){
         this.activityService = activityService;
+        this.urlService = urlService;
     }
 
     @PostMapping(value = "/getActivityList")
@@ -30,6 +34,18 @@ public class AdminFuncController {
         map.put("activityList", activityDTOList);
 
         // System.out.println(activityDTOList);
+
+        return map;
+    }
+
+    @PostMapping(value = "/getUrlList")
+    public HashMap<String, Object> getUrl(@RequestParam("userId") String adminId){
+        HashMap<String, Object> map = new HashMap<>();
+
+        List<UrlDTO> urlDTOList = urlService.getUrlList(adminId);
+        map.put("urlList", urlDTOList);
+
+        // System.out.println("urlList: " + urlDTOList);
 
         return map;
     }

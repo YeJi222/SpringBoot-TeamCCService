@@ -5,8 +5,8 @@ import Swal from "sweetalert2";
 import ActivityTable from './ActivityTable';
 
 function Table(props){
-    const activityList = props.activityList;
-    const setActivityList = props.setActivityList;
+    const tableList = props.tableList;
+    const setTableList = props.setTableList;
     const userId = props.userId;
     const columnList = props.columnList;
     const tableName = props.tableName;
@@ -30,7 +30,7 @@ function Table(props){
         .then(function(response){
             if(response.data.insertResult === 'success'){
                 console.log("success");
-                setActivityList(response.data.activityList);
+                setTableList(response.data.tableList);
             } else{
                 console.log("Failed to insert");
             }
@@ -41,7 +41,7 @@ function Table(props){
         })
     }
 
-    if(activityList !== undefined && columnList != undefined){
+    if(tableList !== undefined && columnList != undefined){
         return(
             <div>
                 <form onSubmit={insertActivityAction}>
@@ -60,8 +60,8 @@ function Table(props){
                                 tableName === 'activityTable' ? 
                                 <ActivityTable
                                     userId={userId}
-                                    activityList={activityList}
-                                    setActivityList={setActivityList}
+                                    tableList={tableList}
+                                    setTableList={setTableList}
                                 />
                                 : (<div></div>)
                             }

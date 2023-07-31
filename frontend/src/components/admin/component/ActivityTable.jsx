@@ -4,8 +4,8 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 function ActivityTable(props){
-    const activityList = props.activityList;
-    const setActivityList = props.setActivityList;
+    const tableList = props.tableList;
+    const setTableList = props.setTableList;
     const userId = props.userId;
 
     const deleteActivityAction = (e) => {
@@ -24,7 +24,7 @@ function ActivityTable(props){
         .then(function(response){
             // console.log(response.data.deleteResult);
             if(response.data.deleteResult === 'success'){
-                setActivityList(response.data.activityList);
+                setTableList(response.data.activityList);
             } else{
                 console.log("Failed to delete");
             }
@@ -34,8 +34,8 @@ function ActivityTable(props){
         })
     }
 
-    if(activityList !== undefined){
-        const activitiyRows = activityList.map((activity, idx) => {
+    if(tableList !== undefined){
+        const activitiyRows = tableList.map((activity, idx) => {
             return(
                 <tr key={idx}>
                     <td className='tableFirstCol'><div className='idNumberCSS'>{idx+1}</div></td>

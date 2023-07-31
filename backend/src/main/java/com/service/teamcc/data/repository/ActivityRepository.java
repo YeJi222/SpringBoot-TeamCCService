@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ActivityRepository extends JpaRepository<ActivityEntity, String> {
 
-    List<ActivityEntity> findByCompositeKeyAdminId(String adminId);
+    List<ActivityEntity> findByCompositeKeyAdminIdOrderByScoreDesc(String adminId);
     int deleteByCompositeKeyAdminIdAndCompositeKeyActivityId(String adminId, String deleteId);
 
     @Modifying

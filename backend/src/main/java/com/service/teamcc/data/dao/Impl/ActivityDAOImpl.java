@@ -3,7 +3,9 @@ package com.service.teamcc.data.dao.Impl;
 import com.service.teamcc.data.dao.ActivityDAO;
 import com.service.teamcc.data.dto.ActivityDTO;
 import com.service.teamcc.data.entity.ActivityEntity;
+import com.service.teamcc.data.entity.UrlEntity;
 import com.service.teamcc.data.repository.ActivityRepository;
+import com.service.teamcc.data.repository.UrlRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +20,7 @@ public class ActivityDAOImpl implements ActivityDAO {
     }
     @Override
     public List<ActivityEntity> getActivityEntityList(String adminId){
-        List<ActivityEntity> activityEntityList = activityRepository.findByCompositeKeyAdminId(adminId);
+        List<ActivityEntity> activityEntityList = activityRepository.findByCompositeKeyAdminIdOrderByScoreDesc(adminId);
 
         return activityEntityList;
     }

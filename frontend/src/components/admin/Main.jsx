@@ -12,6 +12,7 @@ function Main(){
     const navigate = useNavigate();
 
     const [activityList, setActivityList] = useState();
+    const [urlList, setUrlList] = useState();
 
     const storedData = localStorage.getItem('user');
     const sessionData = JSON.parse(storedData);
@@ -50,10 +51,19 @@ function Main(){
                 data: formData
             })
             .then(function(response){
-                // console.log(response.data.activityList);
                 setActivityList(response.data.activityList);
-                // setGroupInfo(response.data);
-                // console.log("group Info", groupInfo);
+            })
+            .catch(function(error){
+                console.log(error);
+            })
+
+            axios({
+                method: "post",
+                url: 'http://localhost:8090/getUrlList',
+                data: formData
+            })
+            .then(function(response){
+                setUrlList(response.data.urlList);
             })
             .catch(function(error){
                 console.log(error);
@@ -69,39 +79,41 @@ function Main(){
                 <div className='tableWrapper'>
                     {/* Activity Table Part */}
                     <TableTitle
+                        tableName="activityTable"
                         tableTitle="TeamCC Activity"
-                        activityList={activityList}
+                        tableList={activityList}
                     />
                     <Table
                         tableName="activityTable"
                         userId={userId}
                         columnList={activityColumn}
-                        activityList={activityList}
-                        setActivityList={setActivityList}
+                        tableList={activityList}
+                        setTableList={setActivityList}
                     />
                     
                     {/* URL Link Table Part */}
                     <TableTitle
+                        tableName="urlTable"
                         tableTitle="Sharing URL Link"
-                        activityList={activityList}
+                        tableList={urlList}
                     />
                     <Table
                         tableName="urlTable"
                         userId={userId}
                         columnList={sharingUrlColumn}
-                        activityList={activityList}
-                        setActivityList={setActivityList}
+                        tableList={urlList}
+                        setTableList={setUrlList}
                     />
                     
                     {/* Information Part */}
                     <TableTitle
                         tableTitle="Information"
-                        activityList={activityList}
+                        tableList={activityList}
                     />
                     <Table
                         userId={userId}
                         activityList={activityList}
-                        setActivityList={setActivityList}
+                        setTableList={setActivityList}
                     />
                     
                     

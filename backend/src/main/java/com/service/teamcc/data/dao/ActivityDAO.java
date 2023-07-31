@@ -1,6 +1,7 @@
 package com.service.teamcc.data.dao;
 
 import com.service.teamcc.data.entity.ActivityEntity;
+import com.service.teamcc.data.entity.UrlEntity;
 import java.util.List;
 
 public interface ActivityDAO {
