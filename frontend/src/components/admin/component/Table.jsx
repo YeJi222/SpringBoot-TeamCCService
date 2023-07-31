@@ -9,17 +9,15 @@ function Table(props){
     const userId = props.userId;
     
     const insertActivityAction = (e) => {
-        const activity = document.getElementById("")
+        const activity = document.getElementById('activityInput').value;
+        const score = document.getElementById('scoreInput').value;
+        const multipleCount = document.getElementById('multipleInput').value;
 
         const formData = new FormData();
         formData.append('userId', userId);
-        // formData.append('activity', activity);
-        // formData.append('score', score);
-        // formData.append('multipleCount', multipleCount);
-
-        formData.append('activity', userId);
-        formData.append('score', userId);
-        formData.append('multipleCount', userId);
+        formData.append('activity', activity);
+        formData.append('score', score);
+        formData.append('multipleCount', multipleCount);
 
         axios({
             method: "post",
@@ -28,6 +26,7 @@ function Table(props){
         })
         .then(function(response){
             if(response.data.insertResult === 'success'){
+                console.log("success");
                 setActivityList(response.data.activityList);
             } else{
                 console.log("Failed to insert");
@@ -88,35 +87,33 @@ function Table(props){
         return(
             <div>
                 <form onSubmit={insertActivityAction}>
-                <table className='tablePart'>
-                    <thead>
-                        <tr className='tableCSS'>
-                            <th className='tableFirstCol th1'>NO.</th>
-                            <th className='tableTH, tableSecondCol'>Activity Name</th>
-                            <th className='tableTH'>Score</th>
-                            <th className='tableTH'>Duplication</th>
-                            <th className='tableTH th5'>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {activitiyRows}
-                        <tr>
-                            <td className='tableFirstCol'>+</td>
-                            
-                                <td className='tableTH, tableSecondCol'><input className='activityInput' style={{width:'40vw'}}  type="text" name="activity" placeholder="ex) 바다 가기" required/></td>
-                                <td className='tableTH'><input className='activityInput' style={{width:'12vw'}} type="number" min="1" name="score" placeholder=" 5 " required/></td>
-                                <td className='tableTH'><input className='activityInput' style={{width:'17vw'}} type="number" min="1" max="50" name="num" placeholder=" 5 " required/></td>
-                                <td className='tableTH'>
-                                    <input type="submit" className='addBtn' style={{width:'10vw'}}
-                                        // onClick={() => insertActivityAction} 
-                                        value='Add'
-                                    ></input>
-                                </td>
-                        </tr>
-                    </tbody>
-                    
-                    
-                </table>
+                    <table className='tablePart'>
+                        <thead>
+                            <tr className='tableCSS'>
+                                <th className='tableFirstCol th1'>NO.</th>
+                                <th className='tableTH, tableSecondCol'>Activity Name</th>
+                                <th className='tableTH'>Score</th>
+                                <th className='tableTH'>Duplication</th>
+                                <th className='tableTH th5'>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {activitiyRows}
+                            <tr>
+                                <td className='tableFirstCol'>+</td>
+                                
+                                    <td className='tableTH, tableSecondCol'><input className='activityInput' style={{width:'40vw'}}  type="text" id="activityInput" placeholder="ex) 바다 가기" required/></td>
+                                    <td className='tableTH'><input className='activityInput' style={{width:'12vw'}} type="number" min="1" id="scoreInput" placeholder=" 5 " required/></td>
+                                    <td className='tableTH'><input className='activityInput' style={{width:'17vw'}} type="number" min="1" max="50" id="multipleInput" placeholder=" 5 " required/></td>
+                                    <td className='tableTH'>
+                                        <input type="submit" className='addBtn' style={{width:'10vw'}}
+                                            // onClick={() => insertActivityAction} 
+                                            value='Add'
+                                        ></input>
+                                    </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </form>
             </div>
             

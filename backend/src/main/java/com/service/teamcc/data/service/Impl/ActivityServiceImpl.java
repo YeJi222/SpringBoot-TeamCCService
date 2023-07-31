@@ -43,24 +43,32 @@ public class ActivityServiceImpl implements ActivityService {
         return result;
     }
 
-    public void dbCheckID(String adminId){
+    public int dbCheckID(String adminId){
         List<ActivityDTO> activityDTOList = entityToDTO(adminId);
         List<Integer> activityPrevID = new ArrayList<>();
 
         for(int i = 0 ; i < activityDTOList.size() ; i++){
             activityPrevID.add(activityDTOList.get(i).getActivityId());
         }
-        System.out.println(activityPrevID);
+        // System.out.println(activityPrevID);
 
-        for(int i = 0 ; i < activityPrevID.size() ; i++){
-            
+        int smallestEmptyId = 1;
+
+        for(int prevId : activityPrevID){
+            if(prevId == smallestEmptyId){
+                smallestEmptyId++;
+            } else{
+                break;
+            }
         }
+
+        return smallestEmptyId;
     }
 
     @Override
     public int insertActivity(String adminId, String activity, String score, String multipleCount){
-        dbCheckID(adminId);
-        int result = activityHandler.insertActivity(adminId, activity, score, multipleCount);
+        int insertId = dbCheckID(adminId);
+        int result = activityHandler.insertActivity(insertId, adminId, activity, score, multipleCount);
 
         return result;
     }

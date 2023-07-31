@@ -6,5 +6,5 @@ import java.util.List;
 public interface ActivityHandler {
     List<ActivityEntity> getActivityEntityList(String adminId);
     int deleteActivity(String adminId, String deleteId);
-    int insertActivity(String adminId, String activity, String score, String multipleCount);
+    int insertActivity(int insertId, String adminId, String activity, String score, String multipleCount);
 }

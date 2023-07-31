@@ -14,7 +14,9 @@ public interface ActivityRepository extends JpaRepository<ActivityEntity, String
     List<ActivityEntity> findByCompositeKeyAdminId(String adminId);
     int deleteByCompositeKeyAdminIdAndCompositeKeyActivityId(String adminId, String deleteId);
 
-    @Query(value = "INSERT INTO activity(admin_id, activity, score, multiple_count) values (:adminId, :activity, :score, :multipleCount)", nativeQuery = true)
-    int insertActivity(@Param("adminId") String adminId, @Param("activity") String activity, @Param("score") String score, @Param("multipleCount") String multipleCount);
-
+    @Modifying
+    @Query(value = "INSERT INTO activity(activity_id, admin_id, activity, score, multiple_count) values (:insertId, :adminId, :activity, :score, :multipleCount)", nativeQuery = true)
+    int insertActivity(@Param("insertId") int insertId, @Param("adminId") String adminId,
+        @Param("activity") String activity,
+        @Param("score") String score, @Param("multipleCount") String multipleCount);
 }

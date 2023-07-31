@@ -31,12 +31,8 @@ public class ActivityDAOImpl implements ActivityDAO {
     }
 
     @Override
-    public int insertActivity(String adminId, String activity, String score, String multipleCount){
-        adminId = "1";
-        activity = "1";
-        score = "1";
-        multipleCount = "1";
-        int result = activityRepository.insertActivity(adminId, activity, score, multipleCount);
+    public int insertActivity(int insertId, String adminId, String activity, String score, String multipleCount){
+        int result = activityRepository.insertActivity(insertId, adminId, activity, score, multipleCount);
 
         return result;
     }
