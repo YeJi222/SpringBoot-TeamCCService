@@ -17,6 +17,9 @@ function Main(){
     const sessionData = JSON.parse(storedData);
     const userId = sessionData.userId;
 
+    const activityColumn = ['NO.', 'Activity Name', 'Score', 'Duplication', 'Delete'];
+    const sharingUrlColumn = ['NO.', 'Link', 'Delete', 'Copy Link', 'Sharing'];
+
     useEffect(() => {
         if(sessionData === null){
             let timerInterval;
@@ -64,26 +67,36 @@ function Main(){
             <HeaderImage/>
             <div className='middleContainer'>
                 <div className='tableWrapper'>
+                    {/* Activity Table Part */}
                     <TableTitle
                         tableTitle="TeamCC Activity"
+                        activityList={activityList}
                     />
                     <Table
+                        tableName="activityTable"
                         userId={userId}
+                        columnList={activityColumn}
                         activityList={activityList}
                         setActivityList={setActivityList}
                     />
                     
+                    {/* URL Link Table Part */}
                     <TableTitle
                         tableTitle="Sharing URL Link"
+                        activityList={activityList}
                     />
                     <Table
+                        tableName="urlTable"
                         userId={userId}
+                        columnList={sharingUrlColumn}
                         activityList={activityList}
                         setActivityList={setActivityList}
                     />
                     
+                    {/* Information Part */}
                     <TableTitle
                         tableTitle="Information"
+                        activityList={activityList}
                     />
                     <Table
                         userId={userId}
