@@ -35,6 +35,9 @@ Caused by: java.sql.SQLException: Specified key was too long; max key length is 
 ### [자동생성 pk]
 => 복합키는 pk 자동생성이 불가능하다..
 
+### [Null return value from advice does not match primitive return type for: public abstract int 에러]
+=> Insert, update, delete 쿼리를 사용할 때는 @Modifying 어노테이션 필요 
+
 ## 참고 글
 ### [DTO <-> Entity 변환 작업 어디서 하면 좋을까?]
 Link: https://velog.io/@jsb100800/Spring-boot-DTO-Entity-%EA%B0%84-%EB%B3%80%ED%99%98-%EC%96%B4%EB%8A%90-Layer%EC%97%90%EC%84%9C-%ED%95%98%EB%8A%94%EA%B2%8C-%EC%A2%8B%EC%9D%84%EA%B9%8C     
