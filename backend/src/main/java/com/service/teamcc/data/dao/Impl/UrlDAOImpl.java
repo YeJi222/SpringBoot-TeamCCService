@@ -22,4 +22,11 @@ public class UrlDAOImpl implements UrlDAO {
 
         return urlEntityList;
     }
+
+    @Override
+    public int deleteUrl(String adminId, String deleteId){
+        int result = urlRepository.deleteByCompositeKeyAdminIdAndCompositeKeyTeamNum(adminId, deleteId);
+
+        return result;
+    }
 }

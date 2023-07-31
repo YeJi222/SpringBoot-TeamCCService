@@ -36,4 +36,10 @@ public class UrlServiceImpl implements UrlService {
 
         return urlDTOList;
     }
+
+    @Override
+    public int deleteUrl(String adminId, String deleteId){
+        int result = urlHandler.deleteUrl(adminId, deleteId);
+        return result;
+    }
 }

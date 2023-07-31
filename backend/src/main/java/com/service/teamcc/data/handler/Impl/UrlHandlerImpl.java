@@ -26,4 +26,11 @@ public class UrlHandlerImpl implements UrlHandler {
 
         return urlEntityList;
     }
+
+    @Override
+    public int deleteUrl(String adminId, String deleteId){
+        int result = urlDAO.deleteUrl(adminId, deleteId);
+
+        return result;
+    }
 }

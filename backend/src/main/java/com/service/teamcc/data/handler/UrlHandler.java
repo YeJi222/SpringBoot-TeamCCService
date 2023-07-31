@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface UrlHandler {
     List<UrlEntity> getUrlEntityList(String adminId);
+    int deleteUrl(String adminId, String deleteId);
 }

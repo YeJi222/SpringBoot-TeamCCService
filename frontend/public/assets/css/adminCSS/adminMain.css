@@ -90,6 +90,11 @@
     width: 40vw;
     text-align: left;
 }
+.urlCSS{
+    color: red;
+    text-decoration-line: underline;
+    font-size: 12px;
+}
 
 .tableTH{
     font-size: 11px;

@@ -51,7 +51,7 @@ public class AdminFuncController {
     }
 
     @PostMapping(value = "/deleteActivity")
-    public HashMap<String, Object> getActivity(
+    public HashMap<String, Object> deleteActivity(
         @RequestParam("userId") String adminId, @RequestParam("deleteId") String deleteId){
         System.out.println(deleteId);
         HashMap<String, Object> map = new HashMap<>();
@@ -62,6 +62,25 @@ public class AdminFuncController {
             map.put("deleteResult", "success");
             List<ActivityDTO> activityDTOList = activityService.getActivityList(adminId);
             map.put("activityList", activityDTOList);
+        } else{ // 실패
+            map.put("deleteResult", "fail");
+        }
+
+        return map;
+    }
+
+    @PostMapping(value = "/deleteUrl")
+    public HashMap<String, Object> deleteUrl(
+        @RequestParam("userId") String adminId, @RequestParam("deleteId") String deleteId){
+        System.out.println(deleteId);
+        HashMap<String, Object> map = new HashMap<>();
+
+        // delete url + set urlList again and return
+        int result = urlService.deleteUrl(adminId, deleteId);
+        if(result == 1){ // 성공
+            map.put("deleteResult", "success");
+            List<UrlDTO> urlDTOList = urlService.getUrlList(adminId);
+            map.put("urlList", urlDTOList);
         } else{ // 실패
             map.put("deleteResult", "fail");
         }

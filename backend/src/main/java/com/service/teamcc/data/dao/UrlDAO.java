@@ -5,4 +5,5 @@ import java.util.List;
 
 public interface UrlDAO {
     List<UrlEntity> getUrlEntityList(String adminId);
+    int deleteUrl(String adminId, String deleteId);
 }

@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UrlRepository extends JpaRepository<UrlEntity, String> {
     List<UrlEntity> findByCompositeKeyAdminId(String adminId);
+    int deleteByCompositeKeyAdminIdAndCompositeKeyTeamNum(String adminId, String deleteId);
 }

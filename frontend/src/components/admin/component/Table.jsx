@@ -62,8 +62,15 @@ function Table(props){
                                     userId={userId}
                                     tableList={tableList}
                                     setTableList={setTableList}
+                                    tableName={tableName}
                                 />
-                                : (<div></div>)
+                                : 
+                                <ActivityTable
+                                    userId={userId}
+                                    tableList={tableList}
+                                    setTableList={setTableList}
+                                    tableName={tableName}
+                                />
                             }
                             {
                                 tableName === 'activityTable' ? (
