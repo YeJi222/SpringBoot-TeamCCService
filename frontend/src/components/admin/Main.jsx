@@ -11,6 +11,8 @@ import axios from "axios";
 function Main(){
     const navigate = useNavigate();
 
+    const [userStateToggled, setUserStateToggled] = useState("yes");
+
     const [activityList, setActivityList] = useState();
     const [urlList, setUrlList] = useState();
 
@@ -82,6 +84,7 @@ function Main(){
                         tableName="activityTable"
                         tableTitle="TeamCC Activity"
                         tableList={activityList}
+                        btnContent={'View Credit Card Image'}
                     />
                     <Table
                         tableName="activityTable"
@@ -96,6 +99,9 @@ function Main(){
                         tableName="urlTable"
                         tableTitle="Sharing URL Link"
                         tableList={urlList}
+                        btnContent={'Add CC Team(URL)'}
+                        userStateToggled={userStateToggled}
+                        setUserStateToggled={setUserStateToggled}
                     />
                     <Table
                         tableName="urlTable"
@@ -106,14 +112,11 @@ function Main(){
                     />
                     
                     {/* Information Part */}
+                    {/* for test */}
                     <TableTitle
                         tableTitle="Information"
                         tableList={activityList}
-                    />
-                    <Table
-                        userId={userId}
-                        activityList={activityList}
-                        setTableList={setActivityList}
+                        btnContent={'test'}
                     />
                     
                     

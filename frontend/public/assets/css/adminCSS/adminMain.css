@@ -28,11 +28,14 @@
     font-size: 12px;
 }
 
-.secondCol{
+.toggleAndBtnArea{
+    margin-top: 5px;
+}
+.activitytTableBtn{
     text-align: center;
     background-color: #6FB6FF;
     color: white;
-    border-radius: 8px;
+    border-radius: 5px;
     font-family: "Poppins";
     font-size: 10px;
     padding: 5px;
@@ -41,6 +44,21 @@
     position: absolute;
     right: 0;
     margin-top: 5px;
+    margin-right: 15px;
+}
+.urlTableBtn{
+    text-align: center;
+    background-color: #F64E60;
+    color: white;
+    border-radius: 5px;
+    font-family: "Poppins";
+    font-size: 10px;
+    padding: 5px;
+    width: 120px;
+    height: 25px;
+    position: absolute;
+    right: 0;
+    margin-top: -25px;
     margin-right: 15px;
 }
 
@@ -106,6 +124,13 @@
 .deleteBtn{
     height: 15px;
 }
+.linkBtn{
+    height: 20px;
+}
+.sharingBtn{
+    height: 25px;
+}
+
 .activityInput{
     font-size: 11px;
     text-align: center;
@@ -130,4 +155,62 @@
 table{
     border-collapse: collapse;
     border-radius: 10px;
+}
+
+/* Toggle */
+.toggleArea{
+    
+}
+.toggleBtn{
+    padding: 15px;
+}
+.toggleContainer {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 55px;
+    height: 25px;
+    border: 3px solid #6FB6FF;
+    border-radius: 25px;
+    background: #6FB6FF;
+    font-weight: bold;
+    color: #111111;
+    cursor: pointer;
+}
+.toggleContainer::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0%;
+    border-radius:25px;
+    background: white;
+    transition: all 0.3s;
+}
+.toggleCheckbox:checked + .toggleContainer::before {
+    left: 50%;
+}
+.toggleContainer div {
+    padding: 13px;
+    text-align: center;
+    z-index: 1;
+}
+.toggleCheckbox {
+    display: none;
+}
+.toggleCheckbox:checked + .toggleContainer div:first-child{
+    color: #FDE1E1;
+    transition: color 0.3s;
+}
+.toggleCheckbox:checked + .toggleContainer div:last-child{
+    color: #ABC0FF;
+    transition: color 0.3s;
+}
+.toggleCheckbox + .toggleContainer div:first-child{
+    color: #111111;
+    transition: color 0.3s;
+}
+.toggleCheckbox + .toggleContainer div:last-child{
+    color: #ABC0FF;
+    transition: color 0.3s;
 }

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-function ActivityTable(props){
+function TableRows(props){
     const tableName = props.tableName;
     const tableList = props.tableList;
     const setTableList = props.setTableList;
@@ -84,18 +84,24 @@ function ActivityTable(props){
                             ></img>
                         </td>
                         <td className='tableTH'>
-
+                            <img className='linkBtn' 
+                                src='/assets/adminImage/linkIcon.png'
+                                // onClick={() => deleteAction('urlDelete', url.teamNum)} 
+                            ></img>
                         </td>
                         <td className='tableTH'>
-                            
+                        <img className='sharingBtn' 
+                                src='/assets/adminImage/kakaoIcon.png'
+                                // onClick={() => deleteAction('urlDelete', url.teamNum)} 
+                            ></img>
                         </td>
                     </tr>
                 );
             });
         }
 
-        return rows
+        return rows;
     }
 }
 
-export default ActivityTable;
+export default TableRows;

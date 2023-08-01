@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
-import ActivityTable from './ActivityTable';
+import TableRows from './TableRows';
 
 function Table(props){
     const tableList = props.tableList;
@@ -56,22 +56,28 @@ function Table(props){
                             </tr>
                         </thead>
                         <tbody>
-                            {
+                            <TableRows
+                                userId={userId}
+                                tableList={tableList}
+                                setTableList={setTableList}
+                                tableName={tableName}
+                            />
+                            {/* {
                                 tableName === 'activityTable' ? 
-                                <ActivityTable
+                                <TableRows
                                     userId={userId}
                                     tableList={tableList}
                                     setTableList={setTableList}
                                     tableName={tableName}
                                 />
                                 : 
-                                <ActivityTable
+                                <TableRows
                                     userId={userId}
                                     tableList={tableList}
                                     setTableList={setTableList}
                                     tableName={tableName}
                                 />
-                            }
+                            } */}
                             {
                                 tableName === 'activityTable' ? (
                                     <tr>
