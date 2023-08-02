@@ -4,22 +4,25 @@ function Toggle(props){
     const userStateToggled = props.userStateToggled;
     const setUserStateToggled = props.setUserStateToggled;
 
+    // console.log(userStateToggled);
+
     const handleToggle = (e) => {
-        setUserStateToggled(userStateToggled === "yes" ? "no" : "yes");
         console.log(userStateToggled);
+        setUserStateToggled(userStateToggled === "yes" ? "no" : "yes");
+        
     };
 
     return(
-        <span className="toggleArea">
-            <input type="checkbox" id="toggle" className="toggleCheckbox"
-                checked={props.userStateToggled}
-                onClick={handleToggle}
+        <div className="toggleArea">
+            <input type="checkbox" 
+                id="toggle" className="toggleCheckbox"
+                checked={userStateToggled}
             />
-            <span htmlFor="toggle" className='toggleContainer'>
-                <div></div>   
-                <div></div>
-            </span>
-            {props.userStateToggled === "yes" ? (
+            <div htmlFor="toggle" className='toggleContainer'>
+                <div onClick={handleToggle}></div>   
+                {/* <div></div> */}
+            </div>
+            {userStateToggled === "yes" ? (
                 <style>
                 {`.toggleCheckbox:checked + .toggleContainer::before {
                     left: 0%;
@@ -41,7 +44,7 @@ function Toggle(props){
                 }`}
                 </style>
             )}
-        </span>
+        </div>
     );
 }
 

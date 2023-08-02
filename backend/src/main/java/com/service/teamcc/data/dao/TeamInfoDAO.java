@@ -1,5 +1,7 @@
 package com.service.teamcc.data.dao;
 
-public interface TeamInfoDAO {
+import com.service.teamcc.data.entity.TeamInfoEntity;
 
+public interface TeamInfoDAO {
+    TeamInfoEntity getTeamInfo(String adminId);
 }

@@ -10,6 +10,7 @@ function Login(){
     const [loginPw, setLoginPw] = useState("");
     const [confirmId, setConfirmId] = useState("yes");
     const [confirmPw, setConfirmPw] = useState("yes");
+    const [teamInfo, setTeamInfo] = useState();
 
     const loginAction = e => {
         const formData = new FormData();
@@ -49,7 +50,7 @@ function Login(){
                 setConfirmId("yes");
                 setConfirmId("yes");
 
-                // 알림창 띄우고, main 화면으로
+                // team 등록되어 있으면 main 화면으로
                 let timerInterval;
                 Swal.fire({
                     title: '로그인 완료!',
@@ -77,6 +78,11 @@ function Login(){
                         navigate('../main');
                     }
                 })
+                
+                // team 등록 전이면 create team 페이지로
+
+                
+                
             } else if(response.data.responseData === "wrong password"){
                 console.log(response.data);
                 setConfirmPw("no");
