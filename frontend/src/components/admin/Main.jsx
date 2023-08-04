@@ -112,12 +112,10 @@ function Main(){
                     />
                     
                     {/* Information Part */}
-                    {/* for test */}
-                    <TableTitle
-                        tableTitle="Information"
-                        tableList={activityList}
-                        btnContent={'test'}
-                    />
+                    <div className='tableTitle'>
+                        Information
+                    </div>
+
                     
                     
                 </div>
