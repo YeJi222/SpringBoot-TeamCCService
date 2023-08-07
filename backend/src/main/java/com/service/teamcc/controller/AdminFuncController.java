@@ -89,12 +89,12 @@ public class AdminFuncController {
     }
 
     @PostMapping(value = "/insertActivity")
-    public HashMap<String, Object> getActivity(@RequestParam("userId") String adminId,
+    public HashMap<String, Object> insertActivity(@RequestParam("userId") String adminId,
         @RequestParam("activity") String activity, @RequestParam("score") String score,
         @RequestParam("multipleCount") String multipleCount){
         HashMap<String, Object> map = new HashMap<>();
 
-        // delete activity + set activityList again and return
+        // add activity + set activityList again and return
         int result = activityService.insertActivity(adminId, activity, score, multipleCount);
         if(result == 1){ // 성공
             map.put("insertResult", "success");
@@ -102,6 +102,23 @@ public class AdminFuncController {
             map.put("activityList", activityDTOList);
         } else{ // 실패
             map.put("insertResult", "fail");
+        }
+
+        return map;
+    }
+
+    @PostMapping(value = "/addTeam")
+    public HashMap<String, Object> addTeam(@RequestParam("userId") String adminId){
+        HashMap<String, Object> map = new HashMap<>();
+
+        // add team + set urlList again and return
+        int result = urlService.addUrl(adminId);
+        if(result == 1){ // 성공
+            map.put("addTeamResult", "success");
+            List<UrlDTO> urlDTOList = urlService.getUrlList(adminId);
+            map.put("urlList", urlDTOList);
+        } else{ // 실패
+            map.put("addTeamResult", "fail");
         }
 
         return map;

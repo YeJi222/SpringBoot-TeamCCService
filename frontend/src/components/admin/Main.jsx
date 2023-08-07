@@ -85,6 +85,7 @@ function Main(){
                         tableTitle="TeamCC Activity"
                         tableList={activityList}
                         btnContent={'View Credit Card Image'}
+                        userId={userId}
                     />
                     <Table
                         tableName="activityTable"
@@ -102,6 +103,7 @@ function Main(){
                         btnContent={'Add CC Team(URL)'}
                         userStateToggled={userStateToggled}
                         setUserStateToggled={setUserStateToggled}
+                        userId={userId}
                     />
                     <Table
                         tableName="urlTable"

@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface UrlService {
     List<UrlDTO> getUrlList(String adminId);
+    int addUrl(String adminId);
     int deleteUrl(String adminId, String deleteId);
 }

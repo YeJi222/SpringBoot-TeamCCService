@@ -7,6 +7,8 @@ import com.service.teamcc.data.entity.UrlEntity;
 import com.service.teamcc.data.handler.ActivityHandler;
 import com.service.teamcc.data.handler.UrlHandler;
 import com.service.teamcc.data.service.UrlService;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,6 +37,37 @@ public class UrlServiceImpl implements UrlService {
         List<UrlDTO> urlDTOList = entityToDTO(adminId);
 
         return urlDTOList;
+    }
+
+    public int dbCheckID(String adminId){
+        List<UrlDTO> urlDTOList = entityToDTO(adminId);
+        List<Integer> urlPrevID = new ArrayList<>();
+
+        for(int i = 0 ; i < urlDTOList.size() ; i++){
+            urlPrevID.add(Integer.parseInt(urlDTOList.get(i).getTeamNum()));
+        }
+        Collections.sort(urlPrevID); // 오름차순 정렬
+
+        int smallestEmptyId = 1;
+
+        for(int prevId : urlPrevID){
+            if(prevId == smallestEmptyId){
+                smallestEmptyId++;
+            } else{
+                break;
+            }
+        }
+
+        return smallestEmptyId;
+    }
+
+    @Override
+    public int addUrl(String adminId){
+        int insertId = dbCheckID(adminId);
+        System.out.println("insertId : " + insertId);
+        int result = urlHandler.addUrl(insertId, adminId);
+
+        return result;
     }
 
     @Override
